@@ -12,14 +12,15 @@ class Solution:
         }
 
         for p in s:
-            if p not in close_to_open:
-                stack.append(p) # then p is an open parentheses
-            elif not stack or stack[-1] != close_to_open[p]:
-                return False # if stack has no open parentheses or the most recent one is not p's match
-            else:
-                stack.pop() # then p has a match, clear both
+            if p not in close_to_open: # then p is an open parentheses
+                stack.append(p)
+            elif not stack or stack[-1] != close_to_open[p]: # if stack has no open parentheses or the most recent one is not p's match
+                return False
+            else: # then p has a match, clear both
+                stack.pop()
 
         return len(stack) == 0 # no leftover open parentheses
+
 
 # class Solution:
 #     def isValid(self, s: str) -> bool:
