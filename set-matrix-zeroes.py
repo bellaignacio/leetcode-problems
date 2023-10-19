@@ -18,20 +18,3 @@ class Solution:
             for col in range(len(matrix[0])):
                 if row in row_set or col in col_set:
                     matrix[row][col] = 0
-
-
-# class Solution:
-#     def setZeroes(self, matrix: List[List[int]]) -> None:
-#         """
-#         Do not return anything, modify matrix in-place instead.
-#         """
-#         row_visited = set()
-#         col_visited = set()
-
-#         for row in range(len(matrix)):
-#             for col in range(len(matrix[0])):
-#                 if row not in row_visited and col not in col_visited and matrix[row][col] == 0:
-#                     matrix[row][:] = [0] * len(matrix[0])
-#                     matrix[:][col] = [0] * len(matrix) # populate column with 0's - not working
-#                     row_visited.add(row)
-#                     col_visited.add(col)
