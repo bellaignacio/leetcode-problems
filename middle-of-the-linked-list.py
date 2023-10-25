@@ -5,6 +5,17 @@
 #         self.next = next
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        slow = fast = head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        return slow
+
+
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
         length = 1
         node = head
 
@@ -13,7 +24,6 @@ class Solution:
             length += 1
 
         mid = (length // 2) + 1
-
         i = 1
         result = head
 
