@@ -22,27 +22,27 @@ class Solution:
         return len(stack) == 0 # no leftover open parentheses
 
 
-# class Solution:
-#     def isValid(self, s: str) -> bool:
-#         if len(s) % 2 != 0:
-#             return False
+class Solution:
+    def isValid(self, s: str) -> bool:
+        if len(s) % 2 != 0:
+            return False
 
-#         # elif s[0] in (')', '}', ']'):
-#         #     return False
+        # elif s[0] in (')', '}', ']'):
+        #     return False
 
-#         else:
-#             open = []
+        else:
+            open = []
 
-#             for p in s:
-#                 if p in ('(', '{', '['):
-#                     open.append(p)
-#                 elif p == ')' and len(open) > 0 and open[-1] == '(':
-#                     open.pop()
-#                 elif p == '}' and len(open) > 0 and open[-1] == '{':
-#                     open.pop()
-#                 elif p == ']' and len(open) > 0 and open[-1] == '[':
-#                     open.pop()
-#                 else:
-#                     return False
+            for p in s:
+                if p in ('(', '{', '['):
+                    open.append(p)
+                elif p == ')' and len(open) > 0 and open[-1] == '(':
+                    open.pop()
+                elif p == '}' and len(open) > 0 and open[-1] == '{':
+                    open.pop()
+                elif p == ']' and len(open) > 0 and open[-1] == '[':
+                    open.pop()
+                else:
+                    return False
 
-#             return len(open) == 0
+            return len(open) == 0
