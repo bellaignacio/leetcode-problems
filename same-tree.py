@@ -7,12 +7,14 @@
 
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        if not p and not q:
-            return True
-        elif not p and q:
-            return False
-        elif not q and p:
-            return False
-        elif p.val != q.val:
-            return False
+        # if we reach the ends of both subtrees at the same time
+        if not p and not q: return True
+
+        # if one node is null but the other is not
+        elif not p and q: return False
+        elif not q and p: return False
+
+        # if the nodes' values do not match
+        elif p.val != q.val: return False
+
         return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
