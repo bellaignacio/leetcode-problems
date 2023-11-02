@@ -16,8 +16,8 @@ class Solution:
         while len(queue) > 0:
             node = queue.popleft()
             if node:
+                count += 1
                 queue.append(node.left)
                 queue.append(node.right)
-                count += 1
 
         return count
