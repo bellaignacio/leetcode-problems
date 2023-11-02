@@ -12,3 +12,19 @@ class Solution:
         left = self.inorderTraversal(root.left)
         right = self.inorderTraversal(root.right)
         return left + [root.val] + right
+
+
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        stack = []
+        stack.append(root)
+        output = []
+
+        while len(stack) > 0:
+            node = stack.pop()
+            if node:
+                output.append(node.val)
+                stack.append(node.left)
+                stack.append(node.right)
+
+        return output
