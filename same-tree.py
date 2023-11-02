@@ -11,8 +11,7 @@ class Solution:
         if not p and not q: return True
 
         # if one node is null but the other is not
-        elif not p and q: return False
-        elif not q and p: return False
+        elif not p or not q: return False
 
         # if the nodes' values do not match
         elif p.val != q.val: return False
