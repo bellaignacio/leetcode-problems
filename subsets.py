@@ -5,13 +5,13 @@ class Solution:
 
         def _backtrack(i):
             if i >= len(nums):
-                results.append(subset.copy()) # candidate is viable, add to results
+                results.append(subset.copy()) # candidate is valid, add to results
                 return
 
             # YES, include nums[i]
-            subset.append(nums[i])
+            subset.append(nums[i]) # go down one level
             _backtrack(i + 1)
-            subset.pop() # "backtrack": undo modification
+            subset.pop() # "backtrack": undo modification, go back up one level
 
             # NO, do not include nums[i]
             _backtrack(i + 1)
