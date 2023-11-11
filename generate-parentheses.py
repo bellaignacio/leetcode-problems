@@ -8,13 +8,13 @@ class Solution:
                 results.append("".join(stack)) # candidate is valid, add to results
                 return
 
-            # include open paranthesis
+            # include open parenthesis
             if openN < n:
                 stack.append("(")
                 _backtrack(openN + 1, closedN)
                 stack.pop() # "backtrack": undo modification, go back up one level
 
-            # include closed paranthesis
+            # include closed parenthesis
             if closedN < openN:
                 stack.append(")")
                 _backtrack(openN, closedN + 1)
