@@ -38,18 +38,18 @@ class Solution:
         # optimization:
         # create a hash table of counts for all letters in the board
         # if any letter in the word exceeds its count, return False (no need to search at all)
-        count = defaultdict(int)
-        for r in range(ROWS):
-            for c in range(COLS):
-                count[board[r][c]] += 1
+        # count = defaultdict(int)
+        # for r in range(ROWS):
+        #     for c in range(COLS):
+        #         count[board[r][c]] += 1
 
-        for char in word:
-            if char not in count:
-                return False
-            else:
-                count[char] -= 1
-                if count[char] < 0:
-                    return False
+        # for char in word:
+        #     if char not in count:
+        #         return False
+        #     else:
+        #         count[char] -= 1
+        #         if count[char] < 0:
+        #             return False
 
 
         # backtracking/DFS traversal for EACH cell
