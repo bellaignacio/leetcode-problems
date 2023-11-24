@@ -19,17 +19,17 @@ class Solution:
             colInbound = 0 <= col < COLS
             return rowInbound and colInbound
 
+        directions = ((1, 0), (0, 1), (-1, 0), (0, -1))
         while queue:
             row, col, level = queue.popleft()
             time = level
 
-            directions = ((1, 0), (0, 1), (-1, 0), (0, -1))
             for dir in directions:
                 newRow = row + dir[0]
                 newCol = col + dir[1]
                 if _inBound(newRow, newCol) and grid[newRow][newCol] == 1:
+                    queue.append((newRow, newCol, level + 1))
                     grid[newRow][newCol] = 2
                     freshOranges -= 1
-                    queue.append((newRow, newCol, level + 1))
 
         return -1 if freshOranges else time
