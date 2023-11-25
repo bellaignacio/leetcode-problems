@@ -1,6 +1,5 @@
 class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
-
         def _searchIsland(row, col):
             if not _inBound(row, col) or grid[row][col] == 0:
                 return 0

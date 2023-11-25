@@ -1,6 +1,5 @@
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
-
         def _dfs(row, col):
             if not _inBound(row, col):
                 return False

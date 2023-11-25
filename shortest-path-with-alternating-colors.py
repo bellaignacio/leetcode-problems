@@ -2,7 +2,6 @@ from collections import defaultdict, deque
 
 class Solution:
     def shortestAlternatingPaths(self, n: int, redEdges: List[List[int]], blueEdges: List[List[int]]) -> List[int]:
-
         def _build_graph(edges):
             graph = defaultdict(list)
 
