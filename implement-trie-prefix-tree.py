@@ -32,7 +32,7 @@ class Trie:
             else:
                 current = current.children[i]
 
-        return True if current.end else False
+        return current.end
 
     def startsWith(self, prefix: str) -> bool:
         current = self.root
