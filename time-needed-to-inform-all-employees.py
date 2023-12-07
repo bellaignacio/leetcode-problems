@@ -9,7 +9,7 @@ class Solution:
                 adj_list[manager[i]].append(i)
 
         queue = deque()
-        queue.append((headID, 0))
+        queue.append((headID, 0)) # the employee, the time it takes for information to reach this employee
         max_time = 0
 
         while queue:
